@@ -1,0 +1,32 @@
+<p>Welcome to billing</p>
+
+<form [formGroup]="billingForm" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label>Name:</label>
+        <input type="text" formControlName="name"/>
+    </div>
+    <div>
+        <label>Surname:</label>
+        <input type="text" formControlName="surname"/>
+    </div>
+    <div>
+        <label>Date of Birth:</label>
+        <input type="date" formControlName="dob"/>
+    </div>
+    <div>
+        <label>Amount:</label>
+        <input type="number" formControlName="amount"/>
+    </div>
+   <span><button type="submit">Send</button></span>
+</form>
+<span><button (click)="getBills()">Get Bills</button></span>
+<form [formGroup]="billingForm2" (ngSubmit)="onSubmit2(billId.value)">
+
+    <div>
+        <label>Bill Id:</label>
+        <input #billId type="text" formControlName="id"/>
+    </div>
+   <span><button type="submit">Send2</button></span>
+   
+</form>
